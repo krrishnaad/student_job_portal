@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jobs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+  <img src="images/google.jpg" alt="Logo">
+  <h2>Student Job Portal</h2>
+</div>
+<ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+   </ul>
+</nav>
+  <div class="logo">Student Job Portal</div>
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
+<section class="hero">
+  <h1>Find Your Dream Internship</h1>
+  <p>Google • Microsoft • Amazon • Remote Jobs</p>
+</section>
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search company...">
+</div>
+
+<p id="noResult" style="display:none; text-align:center;">
+  No Internship Found
+</p>
+
+<a href="index.html" class="back-home">← Back to Home</a>
+<section class="latest-jobs">
+  <h2>All Internships</h2>
+
+  <div class="job-card" id="frontend">
+  <h3>Frontend Developer</h3>
+  <img src="images/google.jpg" class="company-logo">
+  <p>Google • Remote</p>
+    <p><b>Salary:</b> ₹25,000/month</p>
+<p><b>Duration:</b> 3 Months</p>
+<p><b>Deadline:</b> 30 Sept 2026</p>
+    <a href="login.html" class="apply-btn">Apply Now</a>
+  </div>
+
+  <div class="job-card python">
+    <h3>Python Intern</h3>
+    <img src="images/microsoft.jpg" class="company-logo">
+    <p>Microsoft • Bengaluru</p>
+    <p><b>Salary:</b> ₹30,000/month</p>
+<p><b>Duration:</b> 6 Months</p>
+<p><b>Deadline:</b> 15 Oct 2026</p>
+
+    <a href="login.html" class="apply-btn">Apply Now</a>
+  </div>
+</section>
+<footer>
+    <p>© 2026 Student Job Portal | All Rights Reserved</p>
+</footer>
+<script>
+const input = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".job-card");
+const noResult = document.getElementById("noResult");
+
+input.addEventListener("input", function () {
+  const value = input.value.toLowerCase();
+  let found = false;
+
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    if (text.includes(value)) {
+      card.style.display = "block";
+      found = true;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  noResult.style.display = found ? "none" : "block";
+});
+</script>
+
+</body>
+</html>
